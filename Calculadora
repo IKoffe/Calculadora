@@ -1,0 +1,68 @@
+def again():
+    calc_again = input('''
+Deseja calcular de novo?
+S para Sim ou N para Não
+''')
+
+    # Accept 'y' or 'Y' by adding str.upper()
+    if calc_again.upper() == 'S':
+        calculate()
+
+    # Accept 'n' or 'N' by adding str.upper()
+    elif calc_again.upper() == 'N':
+        print('See you later.')
+
+    else:
+        again()
+
+#Neste ponto, devemos adicionar a função again() ao final da função calculate() para que possamos acionar o código que pergunta ao usuário se deseja ou não continuar.
+
+
+def calculate():
+    operation = input('''
+Escolha:
+J para Juros
+M para montante
+''')
+print
+
+    if operation == 'J':
+        Capital = float(input('C =  '))
+        print
+        Taxa = float(input('I =  '))
+        print
+        Tempo = int(input('T = '))
+        J = Capital*(1+Taxa)**Tempo - Capital
+        print('O juros é {:.2f}'.format(J))
+   elif operation == '-':
+        print('{} - {} = '.format(number_1, number_2))
+        print(number_1 - number_2)
+
+    elif operation == '*':
+        print('{} * {} = '.format(number_1, number_2))
+        print(number_1 * number_2)
+
+    elif operation == '/':
+        print('{} / {} = '.format(number_1, number_2))
+        print(number_1 / number_2)
+
+    else:
+        print('You have not typed a valid operator, please run the program again.')
+
+    # Add again() function to calculate() function
+    again()
+
+def again():
+    calc_again = input('''
+Deseja calcular de novo?
+S para Sim ou N para Não
+''')
+
+    if calc_again.upper() == 'S':
+        calculate()
+    elif calc_again.upper() == 'N':
+        print('See you later.')
+    else:
+        again()
+
+calculate()
